@@ -19,7 +19,7 @@ const char* KeyException::what() const noexcept
 {
 	using namespace std::string_literals;
 	std::ostringstream oss;
-	oss << "Exception \""s
+	oss << "\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \nException "s
 		<< getType()
 		<< "\" occurred in '"s
 		<< m_file
@@ -29,6 +29,7 @@ const char* KeyException::what() const noexcept
 		<< std::to_string( m_line )
 		<< "\nDescription: "s
 		<< m_description
+		<< "\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n"s
 		<< std::endl;
 	m_description.assign( oss.str() );
 	return m_description.data();
