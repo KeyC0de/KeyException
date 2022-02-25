@@ -16,6 +16,11 @@
 class KeyException
 	: public std::exception
 {
+	int m_line;
+	std::string m_file;
+	std::string m_function;
+protected:
+	mutable std::string m_description;
 public:
 	KeyException( int line, const char* file, const char* function,
 		const std::string& msg ) noexcept;
@@ -29,13 +34,8 @@ public:
 	inline const unsigned getLine() const noexcept;
 	inline const std::string getFile() const noexcept;
 	inline const std::string getFunction() const noexcept;
-private:
-	int m_line;
-	std::string m_file;
-	std::string m_function;
-protected:
-	mutable std::string m_description;
 };
+
 
 #define throwKeyException( msg ) throw KeyException( __LINE__,\
 	__FILE__,\

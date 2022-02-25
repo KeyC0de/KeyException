@@ -21,9 +21,15 @@
     <ClCompile Include="key_exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game_exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="key_exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_exception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

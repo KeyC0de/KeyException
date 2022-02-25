@@ -12,7 +12,7 @@ KeyException::KeyException( int line,
 	m_file(file),
 	m_description(msg)
 {
-
+	
 }
 
 const char* KeyException::what() const noexcept

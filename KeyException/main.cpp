@@ -1,31 +1,45 @@
 #include <iostream>
 #include "key_exception.h"
+#include "game_exception.h"
 
 
-void throwTheBall()
+void throwTheKey()
 {
 	throwKeyException( "Oh No! Exception incoming!" );
+}
+
+void throwTheGame()
+{
+	throwGameException( "Game Exception!" );
 }
 
 int main()
 {
 	try
 	{
-		throwTheBall();
+		//throwTheKey();
+		throwTheGame();
 	}
-	catch( const KeyException& ex )
+	catch ( const KeyException& ex )
 	{
 		std::cerr << ex.what();
 	}
-	catch( const std::exception& ex )
+	catch ( const GameException& ex )
 	{
 		std::cerr << ex.what();
 	}
-	catch( ... )
+	catch ( const std::exception& ex )
+	{
+		std::cerr << ex.what();
+	}
+	catch ( ... )
 	{
 		std::cout << "Unknown exception!\n";
 	}
 
-	std::system( "pause" );
+	
+#if defined _DEBUG && !defined NDEBUG
+	while ( !getchar() );
+#endif
 	return EXIT_SUCCESS;
 }
