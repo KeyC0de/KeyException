@@ -36,7 +36,6 @@ int main()
 	{
 		std::cout << "Unknown exception!\n";
 	}
-
 	
 #if defined _DEBUG && !defined NDEBUG
 	while ( !getchar() );
