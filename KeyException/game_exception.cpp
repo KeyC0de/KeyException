@@ -1,4 +1,5 @@
 #include "game_exception.h"
+#include <typeinfo>
 
 
 GameException::GameException( int line,
@@ -11,7 +12,7 @@ GameException::GameException( int line,
 
 }
 
-const std::string GameException::getType() const noexcept
+const std::string& GameException::getType() const noexcept
 {
 	return typeid( this ).name();
 }

@@ -30,10 +30,10 @@ public:
 	//===================================================
 	// \brief returns the type of the exception - name of child exception class
 	// \date 2019/09/11 20:18
-	virtual const std::string getType() const noexcept;
+	virtual const std::string& getType() const noexcept;
 	inline const unsigned getLine() const noexcept;
-	inline const std::string getFile() const noexcept;
-	inline const std::string getFunction() const noexcept;
+	inline const std::string& getFile() const noexcept;
+	inline const std::string& getFunction() const noexcept;
 };
 
 

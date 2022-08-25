@@ -10,7 +10,7 @@ public:
 	GameException( int line, const char* file, const char* function,
 		const std::string& msg ) noexcept;
 
-	const std::string getType() const noexcept override;
+	const std::string& getType() const noexcept override;
 	virtual const char* what() const noexcept override;
 };
 
